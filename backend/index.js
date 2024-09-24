@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+dotenv.config();
 
 app.post('/add', async (req, res) => {
     const newCompany = new companyModel(req.body);
@@ -66,6 +66,6 @@ app.patch('/', async (req, res)=>{
 
 app.listen(8080, async () => {
     console.log('Server is running on port 8080');
-    await mongoose.connect('mongodb+srv://manojhebbar2k3:fOmPT0607kJi2nxM@companies.b9lra.mongodb.net/PlacementTracker?retryWrites=true&w=majority&appName=companies');
+    await mongoose.connect(process.env.DB_CONNECT);
 
 });
