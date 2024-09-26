@@ -9,6 +9,12 @@ app.use(express.json());
 app.use(cors());
 dotenv.config();
 
+app.listen(8080, async () => {
+    console.log('Server is running on port 8080');
+    await mongoose.connect(process.env.DB_CONNECT);
+
+});
+
 app.post('/add', async (req, res) => {
     const newCompany = new companyModel(req.body);
 
@@ -64,8 +70,4 @@ app.patch('/', async (req, res)=>{
     //res.send(req.body)
 })
 
-app.listen(8080, async () => {
-    console.log('Server is running on port 8080');
-    await mongoose.connect(process.env.DB_CONNECT);
 
-});
