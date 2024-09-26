@@ -24,7 +24,7 @@ function InfoForm() {
     });
 
     try {
-      const response = await axios.post('http://localhost:8080/add', {
+      const response = await axios.post('https://placementtracker-1.onrender.com/add', {
         companyName,
         ctc,
         base,

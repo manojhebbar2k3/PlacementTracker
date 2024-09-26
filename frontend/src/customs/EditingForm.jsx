@@ -60,7 +60,7 @@ function EditingForm({data, setUpdated, setModal, isModal}) {
     }
     console.log(formData)
     try{
-      const newData = await axios.patch('http://localhost:8080/',formData);
+      const newData = await axios.patch('https://placementtracker-1.onrender.com/',formData);
       console.log(newData.data)
       setUpdated(true);
     }catch(err){

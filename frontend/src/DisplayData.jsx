@@ -15,7 +15,7 @@ function DisplayData() {
       setLoading(true); 
       async function fetchData(){
         try{
-            const res = await axios.get("http://localhost:8080")
+            const res = await axios.get("https://placementtracker-1.onrender.com/")
             setData(res.data);
             console.log(res.data);
             setupdated(false);
@@ -36,7 +36,7 @@ function DisplayData() {
       const modifiedData = data.filter((company) => company._id !== companyId);
       setData(modifiedData);
 
-      const res = await axios.put("http://localhost:8080", modifiedData);
+      const res = await axios.put("https://placementtracker-1.onrender.com/", modifiedData);
       console.log(res.data);
       setupdated(true); // Set to true to refetch after deleting
     } catch (err) {
