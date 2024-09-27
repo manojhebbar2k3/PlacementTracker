@@ -21,9 +21,6 @@ const formatDate = (isoString) => {
   return `${year}-${month}-${day}`;
 };
 
-
-
-
 function EditingForm({data, setUpdated, setModal, isModal}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -60,7 +57,7 @@ function EditingForm({data, setUpdated, setModal, isModal}) {
     }
     console.log(formData)
     try{
-      const newData = await axios.patch('https://placementtracker-1.onrender.com/',formData);
+      const newData = await axios.patch('https://placement-tracker-oftj.vercel.app/companies',formData);
       console.log(newData.data)
       setUpdated(true);
     }catch(err){

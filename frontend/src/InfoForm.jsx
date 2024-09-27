@@ -24,7 +24,7 @@ function InfoForm() {
     });
 
     try {
-      const response = await axios.post('https://placementtracker-1.onrender.com/add', {
+      const response = await axios.post('https://placement-tracker-oftj.vercel.app/add', {
         companyName,
         ctc,
         base,

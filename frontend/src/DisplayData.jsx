@@ -15,7 +15,7 @@ function DisplayData() {
       setLoading(true); 
       async function fetchData(){
         try{
-            const res = await axios.get("https://placementtracker-1.onrender.com/")
+            const res = await axios.get("https://placement-tracker-oftj.vercel.app/companies")
             setData(res.data);
             console.log(res.data);
             setupdated(false);
@@ -36,7 +36,7 @@ function DisplayData() {
       const modifiedData = data.filter((company) => company._id !== companyId);
       setData(modifiedData);
 
-      const res = await axios.put("https://placementtracker-1.onrender.com/", modifiedData);
+      const res = await axios.put("https://placement-tracker-oftj.vercel.app/companies", modifiedData);
       console.log(res.data);
       setupdated(true); // Set to true to refetch after deleting
     } catch (err) {
