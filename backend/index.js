@@ -38,7 +38,7 @@ app.get('/companies', async (req, res) => {
     }
 });
 
-app.put('/', async (req, res)=>{
+app.put('/companies', async (req, res)=>{
     console.log(req.body)
     try{
         const updatedCompanies = req.body;
@@ -52,7 +52,7 @@ app.put('/', async (req, res)=>{
     }
 })
 
-app.patch('/', async (req, res)=>{
+app.patch('/companies', async (req, res)=>{
     try{
         const selectedCompany = req.body;
         const company = await companyModel.findByIdAndUpdate(
