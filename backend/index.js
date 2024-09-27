@@ -9,9 +9,10 @@ app.use(express.json());
 app.use(cors());
 dotenv.config();
 
+ mongoose.connect(process.env.DB_CONNECT).then(res=>console.log("mongodb  connect success")).catch(err=>console.log("mongodb connect error"))
+
 app.listen(8080, async () => {
     console.log('Server is running on port 8080');
-    await mongoose.connect(process.env.DB_CONNECT);
 
 });
 
