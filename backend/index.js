@@ -28,7 +28,7 @@ app.post('/add', async (req, res) => {
     }
 });
 
-app.get('/', async (req, res) => {
+app.get('/companies', async (req, res) => {
     try {
         const companies = await companyModel.find();
         console.log(companies);
