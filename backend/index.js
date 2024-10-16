@@ -32,6 +32,7 @@ app.post('/add', async (req, res) => {
 app.get('/companies', async (req, res) => {
     try {
         const companies = await companyModel.find();
+        companies.sort({codingRoundDate : 1 })
         console.log(companies);
         res.json(companies);
     } catch (err) {
