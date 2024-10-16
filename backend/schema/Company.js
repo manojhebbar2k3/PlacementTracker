@@ -4,7 +4,10 @@ const companySchema = new mongoose.Schema({
     companyName:String,
     ctc:Number,
     base:Number,
-    codingRoundDate:Date,
+    codingRoundDate:{
+        type:Date,
+        default: null
+    },
     pptDate:Date,
     interviewDate:Date,
 })
