@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function InfoForm() {
+  const defaultDate = new Date(Date.UTC(2025,11,30));
   const [companyName, setCompanyName] = useState('');
   const [ctc, setCtc] = useState('');
   const [base, setBase] = useState('');
@@ -28,9 +29,9 @@ function InfoForm() {
         companyName,
         ctc,
         base,
-        codingRoundDate,
-        pptDate,
-        interviewDate
+        codingRoundDate:codingRoundDate?codingRoundDate:defaultDate,
+        pptDate:pptDate?pptDate:defaultDate,
+        interviewDate:interviewDate?interviewDate:defaultDate
       });
       console.log('Server Response:', response.data);
     } catch (error) {
