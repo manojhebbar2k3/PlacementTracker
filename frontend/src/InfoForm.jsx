@@ -6,9 +6,9 @@ function InfoForm() {
   const [companyName, setCompanyName] = useState('');
   const [ctc, setCtc] = useState('');
   const [base, setBase] = useState('');
-  const [codingRoundDate, setCodingRoundDate] = useState('');
-  const [pptDate, setPptDate] = useState('');
-  const [interviewDate, setInterviewDate] = useState('');
+  const [codingRoundDate, setCodingRoundDate] = useState(null);
+  const [pptDate, setPptDate] = useState(null);
+  const [interviewDate, setInterviewDate] = useState(null);
   const navigate = useNavigate();
 
   // Handle form submission
