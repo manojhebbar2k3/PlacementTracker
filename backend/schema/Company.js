@@ -6,10 +6,16 @@ const companySchema = new mongoose.Schema({
     base:Number,
     codingRoundDate:{
         type:Date,
-        default: new Date("2025-12-31"),
+        default: () => new Date(Date.UTC(2025, 11, 31)),
     },
-    pptDate:Date,
-    interviewDate:Date,
+    pptDate:{
+        type:Date,
+        default: () => new Date(Date.UTC(2025, 11, 31)),
+    },
+    interviewDate:{
+        type:Date,
+        default: () => new Date(Date.UTC(2025, 11, 31)),
+    },
 })
 
 const companyModel = mongoose.model("Company", companySchema);
