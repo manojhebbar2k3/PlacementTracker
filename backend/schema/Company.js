@@ -6,7 +6,7 @@ const companySchema = new mongoose.Schema({
     base:Number,
     codingRoundDate:{
         type:Date,
-        default: null
+        default: new Date("2025-12-31"),
     },
     pptDate:Date,
     interviewDate:Date,
